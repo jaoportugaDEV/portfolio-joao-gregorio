@@ -41,6 +41,7 @@ export const portfolioData = {
       linkedin: "https://linkedin.com/in/joao-gregorio123",
       github: "https://github.com/jaoportugaDEV",
     },
+    cvUrl: "/Curriculo_Joao_Desenvolvedor.pdf",
   },
   about: [
     "Sou Desenvolvedor Full Stack Junior com experiencia pratica no Brasil e em Portugal, atuando na criacao de aplicacoes web e sistemas de gestao com foco em entrega real e evolucao continua.",

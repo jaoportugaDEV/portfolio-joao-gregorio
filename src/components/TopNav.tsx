@@ -33,7 +33,8 @@ export function TopNav() {
           ))}
         </nav>
         <a
-          href={`mailto:${hero.contacts.email}?subject=Curriculo%20-%20Joao%20Gregorio`}
+          href={hero.cvUrl}
+          download="Curriculo_Joao_Desenvolvedor.pdf"
           className="ui-btn ui-btn-primary !px-4 !py-2 !text-xs"
         >
           Baixar CV
