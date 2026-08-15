@@ -17,7 +17,7 @@ export function Hero() {
                 Full Stack Junior
               </p>
               <h1 className="text-5xl font-black tracking-tight text-slate-100 sm:text-6xl md:text-7xl">
-                {hero.firstName}
+                {hero.fullName}
               </h1>
               <p className="max-w-3xl text-xl font-semibold leading-tight text-slate-200 sm:text-2xl">
                 {hero.role}

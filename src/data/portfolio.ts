@@ -39,7 +39,7 @@ export const portfolioData = {
       phone: "5518997557925",
       email: "joao.portuga2001@gmail.com",
       linkedin: "https://linkedin.com/in/joao-gregorio123",
-      github: "",
+      github: "https://github.com/jaoportugaDEV",
     },
   },
   about: [
@@ -149,7 +149,7 @@ export const portfolioData = {
       title: "Desenvolvimento de Software",
       description:
         "Formacao voltada ao ciclo completo de desenvolvimento, arquitetura de software e entregas praticas.",
-      place: "IPB (Portugal)",
+      place: "UPB - Universidade Politecnica de Braganca (Portugal)",
     },
     {
       year: "2018-2022",
