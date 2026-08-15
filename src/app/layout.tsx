@@ -16,6 +16,21 @@ export const metadata: Metadata = {
   title: "Joao Gregorio | Full Stack Junior",
   description:
     "Portfolio de Joao Gregorio com foco em desenvolvimento full stack, automacoes e IA aplicada.",
+  openGraph: {
+    title: "Joao Gregorio | Full Stack Junior",
+    description:
+      "Desenvolvedor Full Stack Junior focado em IA aplicada, automacoes e sistemas web.",
+    url: "https://portfolio-joao-gregorio.vercel.app",
+    siteName: "Joao Gregorio",
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Joao Gregorio | Full Stack Junior",
+    description:
+      "Desenvolvedor Full Stack Junior focado em IA aplicada, automacoes e sistemas web.",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
