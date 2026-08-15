@@ -174,7 +174,7 @@ export const portfolioData = {
       type: "Experiencia internacional",
       title: "Atuacao tecnica em Portugal",
       description:
-        "Vivencia profissional e colaborativa em ambiente multicultural, com foco em execucao e adaptabilidade.",
+        "Experiencia de trabalho em equipe internacional, com comunicacao em ingles avancado e espanhol basico junto a outros programadores, e construcao de aplicacoes com foco na evolucao da empresa.",
       place: "Braganca, Portugal",
     },
     {
