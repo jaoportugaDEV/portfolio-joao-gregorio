@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Geist } from "next/font/google";
+import { Footer } from "@/components/site/Footer";
+import { Header } from "@/components/site/Header";
+import { profile } from "@/data/profile";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -7,39 +10,54 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
+  axes: ["opsz", "wdth"],
 });
 
+const descricao =
+  "Sites e sistemas para pequenos negócios. Cada projeto mostra a criação inteira: a ideia, a marca, o código e o porquê de cada escolha.";
+
 export const metadata: Metadata = {
-  title: "Joao Gregorio | Full Stack Junior",
-  description:
-    "Portfolio de Joao Gregorio com foco em desenvolvimento full stack, automacoes e IA aplicada.",
+  metadataBase: new URL(profile.siteUrl),
+  title: {
+    default: "João Gregório | Desenvolvedor web",
+    template: "%s | João Gregório",
+  },
+  description: descricao,
   openGraph: {
-    title: "Joao Gregorio | Full Stack Junior",
-    description:
-      "Desenvolvedor Full Stack Junior focado em IA aplicada, automacoes e sistemas web.",
-    url: "https://portfolio-joao-gregorio.vercel.app",
-    siteName: "Joao Gregorio",
+    title: "João Gregório | Desenvolvedor web",
+    description: descricao,
+    url: "/",
+    siteName: "João Gregório",
     locale: "pt_BR",
     type: "website",
+    images: ["/projetos/jane-bolos/site-desktop.jpg"],
   },
   twitter: {
-    card: "summary",
-    title: "Joao Gregorio | Full Stack Junior",
-    description:
-      "Desenvolvedor Full Stack Junior focado em IA aplicada, automacoes e sistemas web.",
+    card: "summary_large_image",
+    title: "João Gregório | Desenvolvedor web",
+    description: descricao,
   },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="pt-BR"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="pt-BR" className={`${geistSans.variable} ${bricolage.variable} antialiased`}>
+      <body className="flex min-h-dvh flex-col">
+        <a
+          href="#conteudo"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:rounded-lg focus:bg-folha focus:px-4 focus:py-2"
+        >
+          Pular para o conteúdo
+        </a>
+        <Header />
+        <div id="conteudo" className="flex-1">
+          {children}
+        </div>
+        <Footer />
+      </body>
     </html>
   );
 }
