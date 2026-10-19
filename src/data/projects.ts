@@ -2,6 +2,7 @@
 // e mora no próprio arquivo em src/data/projects/. Para criar um novo, copie jane-bolos.ts.
 
 import { janeBolos } from "./projects/jane-bolos";
+import { zero18Burger } from "./projects/zero18-burger";
 
 export type Img = { src: string; alt: string; width: number; height: number };
 
@@ -66,7 +67,7 @@ export type UpcomingProject = {
   description: string;
 };
 
-export const caseStudies: CaseStudy[] = [janeBolos];
+export const caseStudies: CaseStudy[] = [janeBolos, zero18Burger];
 
 export const otherProjects: SimpleProject[] = [
   {
@@ -112,15 +113,9 @@ export const otherProjects: SimpleProject[] = [
 export const upcomingProjects: UpcomingProject[] = [
   {
     kind: "upcoming",
-    name: "Zero18 Burger",
-    type: "Site conceito",
-    description: "Hamburgueria de Presidente Prudente, o segundo da série de sites para negócios da cidade.",
-  },
-  {
-    kind: "upcoming",
     name: "Contec Contabilidade",
     type: "Site conceito",
-    description: "Escritório de contabilidade de Presidente Prudente. O terceiro da série.",
+    description: "Escritório de contabilidade de Presidente Prudente. O terceiro da série de sites para negócios da cidade.",
   },
 ];
 

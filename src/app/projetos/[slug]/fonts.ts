@@ -1,10 +1,13 @@
-import { Fraunces, Nunito, Pacifico } from "next/font/google";
+import { Anton, Barlow, Fraunces, Nunito, Pacifico, Yellowtail } from "next/font/google";
 
 // Fontes da marca de cada cliente, usadas no espécime de tipografia e nos nomes dos mascotes.
 // O next/font só carrega estas fontes na página do projeto.
 const fraunces = Fraunces({ subsets: ["latin"], weight: "900", display: "swap", preload: false });
 const pacifico = Pacifico({ subsets: ["latin"], weight: "400", display: "swap", preload: false });
 const nunito = Nunito({ subsets: ["latin"], weight: ["400"], display: "swap", preload: false });
+const anton = Anton({ subsets: ["latin"], weight: "400", display: "swap", preload: false });
+const yellowtail = Yellowtail({ subsets: ["latin"], weight: "400", display: "swap", preload: false });
+const barlow = Barlow({ subsets: ["latin"], weight: ["400"], display: "swap", preload: false });
 
 export type BrandFonts = { display: string; script: string; text: string };
 
@@ -13,5 +16,10 @@ export const brandFonts: Record<string, BrandFonts> = {
     display: fraunces.className,
     script: pacifico.className,
     text: nunito.className,
+  },
+  "zero18-burger": {
+    display: anton.className,
+    script: yellowtail.className,
+    text: barlow.className,
   },
 };
