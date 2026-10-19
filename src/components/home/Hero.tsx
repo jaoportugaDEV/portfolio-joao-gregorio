@@ -11,11 +11,7 @@ function Mesa() {
     .find((b) => b.kind === "palette");
 
   return (
-    <Link
-      href={`/projetos/${janeBolos.slug}`}
-      aria-label={`Ver a criação completa do projeto ${janeBolos.name}`}
-      className="group relative block aspect-[5/4] w-full"
-    >
+    <div className="relative aspect-[5/4] w-full">
       <div
         className="mesa-peca peca absolute top-[9%] left-[3%] w-[80%]"
         style={{ "--giro": "-2deg", "--giro-inicial": "-5deg", "--atraso": "80ms" } as React.CSSProperties}
@@ -96,13 +92,23 @@ function Mesa() {
           atraso="1150ms"
         />
         <span
-          className="mesa-nota t-anotacao absolute -bottom-[7%] left-[1%] w-48"
+          className="mesa-nota t-anotacao absolute -bottom-[9%] left-[24%] w-52"
           style={{ "--atraso": "1500ms" } as React.CSSProperties}
         >
           três mascotes, seis expressões cada
         </span>
+        <Seta
+          className="absolute -bottom-[6%] left-[15%] w-12"
+          d="M56 26 C 42 30, 26 26, 12 12"
+          atraso="1350ms"
+        />
       </span>
-    </Link>
+      <Link
+        href={`/projetos/${janeBolos.slug}`}
+        aria-label={`Ver a criação completa do projeto ${janeBolos.name}`}
+        className="absolute inset-0 z-10 rounded-[var(--raio-bloco)]"
+      />
+    </div>
   );
 }
 

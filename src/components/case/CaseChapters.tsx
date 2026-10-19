@@ -22,7 +22,7 @@ export function CaseChapters({ project, fonts }: { project: CaseStudy; fonts?: B
 
       <div className="min-w-0 space-y-24 lg:space-y-32">
         {project.chapters.map((c, i) => (
-          <section key={c.id} id={c.id} aria-labelledby={`${c.id}-titulo`} className="scroll-mt-24">
+          <section key={c.id} id={c.id} aria-labelledby={`${c.id}-titulo`} className="capitulo scroll-mt-24">
             <header className="flex items-baseline gap-4">
               <span
                 className="font-display text-2xl font-bold tabular-nums"

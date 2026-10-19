@@ -221,7 +221,7 @@ export const janeBolos: CaseStudy = {
         {
           kind: "video",
           src: `${base}/video-16x9.mp4`,
-          poster: img("video-poster.jpg", "Quadro do vídeo da Jane Bolos", 1600, 900),
+          poster: img("video-poster.jpg", "Quadro do vídeo da Jane Bolos", 1024, 576),
           caption: "O vídeo de 15 segundos, na versão do site.",
         },
         {

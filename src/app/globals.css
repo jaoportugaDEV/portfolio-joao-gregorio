@@ -69,9 +69,6 @@ body {
     font-weight: 700;
     text-wrap: balance;
   }
-  p {
-    text-wrap: pretty;
-  }
 }
 
 @layer components {
@@ -112,9 +109,9 @@ body {
 
   .t-anotacao {
     font-family: var(--font-bricolage), sans-serif;
-    font-size: 0.95rem;
-    line-height: 1.25;
-    font-weight: 500;
+    font-size: 1.05rem;
+    line-height: 1.2;
+    font-weight: 550;
     font-variation-settings: "wdth" 80;
     color: var(--cobalto);
   }
@@ -186,6 +183,12 @@ body {
     border: 1px solid var(--linha);
     color: var(--grafite);
   }
+}
+
+/* Capítulos fora da tela não entram no cálculo de layout até chegarem perto. */
+.capitulo {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1400px;
 }
 
 /* Página de projeto: a marca do cliente assume. */

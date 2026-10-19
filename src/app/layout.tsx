@@ -13,7 +13,7 @@ const geistSans = Geist({
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
   subsets: ["latin"],
-  axes: ["opsz", "wdth"],
+  axes: ["wdth"],
 });
 
 const descricao =
