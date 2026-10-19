@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { portfolioData } from "@/data/portfolio";
 import { SectionTitle } from "./SectionTitle";
 
@@ -24,6 +25,21 @@ export function Projects() {
               </span>
             </div>
             <p className="mt-4 text-base leading-relaxed text-slate-300">{project.description}</p>
+            {project.images ? (
+              <div className="mt-6 grid grid-cols-[3fr_1fr] items-start gap-3 sm:gap-4">
+                {project.images.map((image) => (
+                  <Image
+                    key={image.src}
+                    src={image.src}
+                    alt={image.alt}
+                    width={image.width}
+                    height={image.height}
+                    sizes="(min-width: 1024px) 640px, 75vw"
+                    className="h-auto w-full rounded-xl border border-[#2a3050]"
+                  />
+                ))}
+              </div>
+            ) : null}
             <ul className="mt-5 space-y-2 text-slate-300">
               {project.highlights.map((item) => (
                 <li key={item} className="flex gap-3">
@@ -42,6 +58,16 @@ export function Projects() {
                 </span>
               ))}
             </div>
+            {project.url ? (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noreferrer"
+                className="ui-btn ui-btn-primary mt-6 inline-flex"
+              >
+                Ver o site
+              </a>
+            ) : null}
             {project.confidential ? (
               <p className="mt-5 text-sm text-slate-400">
                 Projeto com parte do contexto sob confidencialidade.

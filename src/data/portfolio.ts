@@ -10,6 +10,8 @@ export type ProjectItem = {
   highlights: string[];
   stack: string[];
   confidential?: boolean;
+  url?: string;
+  images?: { src: string; alt: string; width: number; height: number }[];
 };
 
 export type TimelineItem = {
@@ -87,6 +89,33 @@ export const portfolioData = {
         "React Hook Form",
         "Zod",
         "Tailwind CSS",
+      ],
+    },
+    {
+      name: "Jane Bolos, Doces e Salgados",
+      status: "Site conceito",
+      description:
+        "Site conceito para uma confeitaria de Presidente Prudente, com vitrine de produtos, montador de encomendas e pedido direto pelo WhatsApp. Projeto sem vinculo oficial com a marca.",
+      highlights: [
+        "Montador de encomenda que calcula salgados e doces por pessoa e envia o pedido pronto no WhatsApp.",
+        "Mascotes, video animado com Remotion, kit de redes sociais e guia de marca.",
+        "Lighthouse 100 em desempenho, acessibilidade e boas praticas no desktop.",
+      ],
+      stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Motion", "GSAP", "Lenis", "Remotion"],
+      url: "https://jane-bolos.vercel.app",
+      images: [
+        {
+          src: "/projetos/jane-bolos/site-desktop.jpg",
+          alt: "Pagina inicial do site da Jane Bolos no computador",
+          width: 2160,
+          height: 1350,
+        },
+        {
+          src: "/projetos/jane-bolos/site-celular.jpg",
+          alt: "Site da Jane Bolos no celular",
+          width: 780,
+          height: 1688,
+        },
       ],
     },
     {
