@@ -5,7 +5,7 @@ export const profile = {
   firstName: "João",
   role: "Desenvolvedor web",
   city: "Presidente Prudente/SP",
-  siteUrl: "https://portfolio-joao-gregorio.vercel.app",
+  siteUrl: "https://joaogregorio.vercel.app",
   contacts: {
     whatsapp: "5518997557925",
     whatsappLabel: "(18) 99755-7925",
