@@ -7,7 +7,7 @@ function Featured({ project }: { project: CaseStudy }) {
   const href = `/projetos/${project.slug}`;
   return (
     <article
-      className="grid gap-8 overflow-hidden rounded-[var(--raio-bloco)] p-5 sm:p-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] lg:gap-12 lg:p-10"
+      className="card-projeto grid gap-8 overflow-hidden rounded-[var(--raio-bloco)] p-5 sm:p-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] lg:gap-12 lg:p-10"
       style={{ background: project.theme.bg, color: project.theme.ink }}
     >
       <Link href={href} tabIndex={-1} aria-hidden className="relative block">

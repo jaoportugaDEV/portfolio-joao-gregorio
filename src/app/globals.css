@@ -1,21 +1,23 @@
 @import "tailwindcss";
 
-/* Mesa de trabalho: fundo de giz frio, tinta nanquim e o cobalto do João.
+/* Oficina à noite: fundo azul-noite, texto claro, o cobalto do João mais aceso e um ciano de sinal.
+   Os nomes antigos continuam (giz = fundo, folha = superfície, nanquim = texto) para os componentes acompanharem.
    Nas páginas de projeto, as variáveis --case-* trocam o acento pelas cores do cliente. */
 :root {
-  --giz: #eceef2;
-  --folha: #ffffff;
-  --nanquim: #161b33;
-  --grafite: #565c72;
-  --linha: #d3d8e2;
-  --cobalto: #2f3fd6;
-  --cobalto-escuro: #2131b0;
-  --cobalto-claro: #dfe3ff;
+  --giz: #0b1022;
+  --folha: #131a34;
+  --nanquim: #e7ebf7;
+  --grafite: #9aa3c0;
+  --linha: #26305a;
+  --cobalto: #6b78ff;
+  --cobalto-escuro: #4f5dff;
+  --cobalto-claro: #1d2550;
+  --sinal: #4fdcf5;
 
-  --raio-peca: 0.375rem; /* imagens e prints sobre a mesa */
+  --raio-peca: 0.5rem; /* prints e telas */
   --raio-botao: 0.75rem;
   --raio-bloco: 1.25rem;
-  --sombra-peca: 0 1px 2px rgb(22 27 51 / 0.08), 0 12px 28px -12px rgb(22 27 51 / 0.28);
+  --sombra-peca: 0 1px 0 rgb(255 255 255 / 0.06) inset, 0 18px 40px -16px rgb(0 0 0 / 0.65);
 }
 
 @theme inline {
@@ -27,8 +29,10 @@
   --color-cobalto: var(--cobalto);
   --color-cobalto-escuro: var(--cobalto-escuro);
   --color-cobalto-claro: var(--cobalto-claro);
+  --color-sinal: var(--sinal);
   --font-sans: var(--font-geist-sans);
   --font-display: var(--font-bricolage);
+  --font-mono: var(--font-geist-mono);
 }
 
 * {
@@ -199,8 +203,10 @@ body {
   contain-intrinsic-size: auto 1400px;
 }
 
-/* Página de projeto: a marca do cliente assume. */
+/* Página de projeto: a marca do cliente assume, e os prints voltam a ter moldura branca. */
 .case {
+  --folha: #ffffff;
+  --sombra-peca: 0 1px 2px rgb(0 0 0 / 0.08), 0 12px 28px -12px rgb(0 0 0 / 0.35);
   background: var(--case-bg);
   color: var(--case-ink);
 }
@@ -242,41 +248,49 @@ body {
   color: var(--case-ink);
 }
 
-/* Único momento animado: as peças da mesa assentam e as setas se desenham. */
-@keyframes assentar {
-  from {
-    opacity: 0;
-    transform: translateY(18px) rotate(var(--giro-inicial, 0deg));
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) rotate(var(--giro, 0deg));
-  }
+/* Malha de planta técnica atrás do hero, sumindo nas bordas. */
+.malha {
+  background-image:
+    linear-gradient(rgb(107 120 255 / 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(107 120 255 / 0.09) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 70% 60% at 60% 40%, #000 30%, transparent 75%);
 }
 
-@keyframes desenhar {
-  to {
-    stroke-dashoffset: 0;
-  }
+.brilho {
+  background:
+    radial-gradient(40rem 26rem at 78% 18%, rgb(79 93 255 / 0.22), transparent 70%),
+    radial-gradient(28rem 20rem at 8% 90%, rgb(79 220 245 / 0.08), transparent 70%);
 }
 
-@keyframes surgir {
-  to {
-    opacity: 1;
-  }
+/* Botão principal com leve brilho no hover. */
+.btn-cheio {
+  box-shadow: 0 0 0 0 rgb(107 120 255 / 0);
+  transition:
+    background-color 160ms ease,
+    box-shadow 200ms ease;
+}
+.btn-cheio:hover {
+  box-shadow: 0 8px 28px -8px rgb(107 120 255 / 0.7);
 }
 
-.mesa-peca {
-  transform: rotate(var(--giro, 0deg));
-  animation: assentar 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+/* Editor do hero: cada linha se digita uma vez, na ordem. */
+.codigo-linha {
+  display: block;
+  width: 0;
+  overflow: hidden;
+  white-space: pre;
+  animation: digitar calc(var(--ch) * 28ms) steps(var(--ch), end) forwards;
   animation-delay: var(--atraso, 0ms);
 }
-
-.mesa-seta path {
-  stroke-dasharray: 220;
-  stroke-dashoffset: 220;
-  animation: desenhar 650ms ease-out forwards;
-  animation-delay: var(--atraso, 900ms);
+.codigo-pronto .codigo-linha {
+  width: auto;
+  animation: none;
+}
+@keyframes digitar {
+  to {
+    width: calc(var(--ch) * 1ch);
+  }
 }
 
 /* O cursor da marca pisca como num terminal. */
@@ -290,24 +304,136 @@ body {
   animation: piscar 1.1s steps(1) infinite;
 }
 
-.mesa-nota {
-  opacity: 0;
-  animation: surgir 400ms ease-out forwards;
-  animation-delay: var(--atraso, 1100ms);
+.cursor {
+  display: inline-block;
+  width: 0.55ch;
+  height: 1.15em;
+  vertical-align: -0.2em;
+  background: var(--sinal);
+  animation: piscar-cursor 1s steps(2, start) infinite;
+}
+@keyframes piscar-cursor {
+  to {
+    visibility: hidden;
+  }
+}
+
+.previa-sobe {
+  animation: previa 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: var(--atraso, 0ms);
+}
+@keyframes previa {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.97);
+  }
+}
+
+/* Linha do "Como eu trabalho" que se desenha conforme a seção passa pela tela. */
+.trilha {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+@supports (animation-timeline: view()) {
+  .trilha {
+    animation: trilha linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 45%;
+  }
+}
+@keyframes trilha {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+/* Card de projeto: sobe um pouco e acende a borda quando o mouse passa. */
+.card-projeto {
+  transition:
+    transform 260ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 260ms ease;
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 0.06);
+}
+.card-projeto:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 0 1px rgb(107 120 255 / 0.55),
+    0 24px 50px -20px rgb(0 0 0 / 0.8);
+}
+
+/* Guia: o mini-João no canto. */
+.guia-boneco {
+  animation: flutuar 4s ease-in-out infinite;
+}
+@keyframes flutuar {
+  50% {
+    transform: translateY(-4px);
+  }
+}
+.guia-olhos {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: piscar-olho 5s infinite;
+}
+@keyframes piscar-olho {
+  0%,
+  94%,
+  100% {
+    transform: scaleY(1);
+  }
+  97% {
+    transform: scaleY(0.1);
+  }
+}
+.guia-braco {
+  transform-box: fill-box;
+  transform-origin: 20% 90%;
+}
+.guia-acenando .guia-braco {
+  animation: acenar 0.45s ease-in-out 4 alternate;
+}
+@keyframes acenar {
+  from {
+    transform: rotate(-14deg);
+  }
+  to {
+    transform: rotate(16deg);
+  }
+}
+.balao-entra {
+  animation: balao 260ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@keyframes balao {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-  .mesa-peca,
-  .mesa-nota,
+  .codigo-linha {
+    width: auto;
+    animation: none;
+  }
   .cursor-pisca {
     animation: none;
     opacity: 1;
   }
-  .mesa-seta path {
+  .cursor,
+  .guia-boneco,
+  .guia-olhos,
+  .guia-acenando .guia-braco,
+  .previa-sobe,
+  .balao-entra,
+  .trilha {
     animation: none;
-    stroke-dashoffset: 0;
+  }
+  .card-projeto,
+  .card-projeto:hover {
+    transition: none;
+    transform: none;
   }
 }

@@ -7,7 +7,13 @@ export function Process() {
         <h2 className="t-titulo max-w-[18ch]">Como eu trabalho</h2>
         <ol className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {process.map((step, i) => (
-            <li key={step.title} className="border-t-2 border-nanquim pt-5">
+            <li key={step.title} className="relative pt-5">
+              <span aria-hidden className="absolute inset-x-0 top-0 h-0.5 bg-linha" />
+              <span
+                aria-hidden
+                className="trilha absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-cobalto to-sinal"
+                style={{ animationRangeStart: `entry ${10 + i * 8}%` } as React.CSSProperties}
+              />
               <span className="font-display text-4xl font-bold text-cobalto" aria-hidden>
                 {i + 1}
               </span>

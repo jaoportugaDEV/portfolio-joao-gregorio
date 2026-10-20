@@ -17,18 +17,18 @@ export function About() {
           />
         </div>
         <figure className="mx-auto mt-10 w-full max-w-[20rem] md:mx-0">
-          <div className="rounded-[var(--raio-bloco)] bg-nanquim p-5 font-mono text-[0.85rem] leading-relaxed text-giz shadow-[var(--sombra-peca)]">
-            <p className="flex items-center gap-2 text-giz/60">
+          <div className="rounded-[var(--raio-bloco)] border border-linha bg-[#070b18] p-5 font-mono text-[0.85rem] leading-relaxed text-nanquim shadow-[var(--sombra-peca)]">
+            <p className="flex items-center gap-2 text-grafite">
               <Marca className="size-5 text-cobalto" />
               joao@braganca
             </p>
             <p className="mt-4">
-              <span className="text-cobalto-claro">~/estudos</span> $ cat formacao
+              <span className="text-sinal">~/estudos</span> $ cat formacao
             </p>
             <p className="mt-1 font-semibold">Engenharia Informática</p>
-            <p className="text-giz/70">
+            <p className="text-grafite">
               UPB, Portugal, 2022 a 2026
-              <span aria-hidden className="ml-1 inline-block h-[1em] w-[0.55em] translate-y-[0.15em] bg-cobalto-claro" />
+              <span aria-hidden className="ml-1 inline-block h-[1em] w-[0.55em] translate-y-[0.15em] bg-sinal" />
             </p>
           </div>
           <figcaption className="sr-only">Formação em Engenharia Informática na UPB, em Portugal</figcaption>
