@@ -114,9 +114,15 @@ export const otherProjects: SimpleProject[] = [
 export const upcomingProjects: UpcomingProject[] = [
   {
     kind: "upcoming",
-    name: "Contec Contabilidade",
-    type: "Site conceito",
-    description: "Escritório de contabilidade de Presidente Prudente. O terceiro da série de sites para negócios da cidade.",
+    name: "Arca de Noé Sorveteria",
+    type: "Site",
+    description: "Site da sorveteria, com a marca e os sabores em primeiro plano.",
+  },
+  {
+    kind: "upcoming",
+    name: "Grandizolis Pizzaria",
+    type: "Site",
+    description: "Site da pizzaria, com o cardápio e o pedido em primeiro plano.",
   },
 ];
 

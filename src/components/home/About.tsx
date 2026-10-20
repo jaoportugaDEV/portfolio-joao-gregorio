@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Marca } from "@/components/site/Marca";
 import { about, profile } from "@/data/profile";
 
 export function About() {
@@ -15,6 +16,23 @@ export function About() {
             className="h-auto w-full"
           />
         </div>
+        <figure className="mx-auto mt-10 w-full max-w-[20rem] md:mx-0">
+          <div className="rounded-[var(--raio-bloco)] bg-nanquim p-5 font-mono text-[0.85rem] leading-relaxed text-giz shadow-[var(--sombra-peca)]">
+            <p className="flex items-center gap-2 text-giz/60">
+              <Marca className="size-5 text-cobalto" />
+              joao@braganca
+            </p>
+            <p className="mt-4">
+              <span className="text-cobalto-claro">~/estudos</span> $ cat formacao
+            </p>
+            <p className="mt-1 font-semibold">Engenharia Informática</p>
+            <p className="text-giz/70">
+              UPB, Portugal, 2022 a 2026
+              <span aria-hidden className="ml-1 inline-block h-[1em] w-[0.55em] translate-y-[0.15em] bg-cobalto-claro" />
+            </p>
+          </div>
+          <figcaption className="sr-only">Formação em Engenharia Informática na UPB, em Portugal</figcaption>
+        </figure>
       </div>
       <div>
         <h2 className="t-titulo">Sobre mim</h2>

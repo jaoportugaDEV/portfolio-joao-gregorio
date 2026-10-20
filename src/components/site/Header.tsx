@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { profile } from "@/data/profile";
+import { Marca } from "./Marca";
 
 const links = [
   { label: "Projetos", href: "/#projetos" },
@@ -11,7 +12,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-linha bg-giz/90 backdrop-blur-md">
       <div className="shell flex h-16 items-center justify-between gap-4">
-        <Link href="/" className="font-display text-lg font-bold tracking-tight">
+        <Link href="/" className="flex items-center gap-2.5 font-display text-lg font-bold tracking-tight">
+          <Marca className="size-8 shrink-0 text-cobalto" />
           {profile.name}
         </Link>
         <nav aria-label="Principal" className="flex items-center gap-1 sm:gap-6">

@@ -24,11 +24,11 @@ export const mensagemPadrao = "Oi, João! Vi seu portfólio e queria conversar s
 
 export const about = {
   paragraphs: [
-    "Sou desenvolvedor full stack e moro em Presidente Prudente. Me formei em Desenvolvimento de Software na Universidade Politécnica de Bragança, em Portugal, e trabalhei lá de 2023 a 2025 numa equipe internacional de programadores, em inglês.",
+    "Sou desenvolvedor full stack e moro em Presidente Prudente. Me formei em Engenharia Informática na Universidade Politécnica de Bragança, em Portugal, e trabalhei lá de 2023 a 2025 numa equipe internacional de programadores, em inglês.",
     "Hoje divido o tempo entre o Buffet Fácil, um sistema de gestão para buffets que já roda com clientes reais, e sites para negócios da cidade. Gosto dos dois lados do trabalho: a tela que o cliente vê e a regra de negócio que faz tudo funcionar por trás.",
   ],
   facts: [
-    { label: "Formação", value: "Desenvolvimento de Software, UPB (Portugal), 2022 a 2026" },
+    { label: "Formação", value: "Engenharia Informática, UPB (Portugal), 2022 a 2026" },
     { label: "Experiência", value: "Equipe de desenvolvimento em Bragança, Portugal, 2023 a 2025" },
     { label: "Idiomas", value: "Inglês avançado (B2), espanhol básico (A2)" },
     { label: "Ferramentas", value: "Next.js, React, TypeScript, Node.js, Supabase, PostgreSQL, n8n" },

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Marca } from "@/components/site/Marca";
 import { caseStudies, otherProjects, upcomingProjects, type CaseStudy } from "@/data/projects";
 
 function Featured({ project }: { project: CaseStudy }) {
@@ -119,7 +120,8 @@ export function Projects() {
         <h3 className="t-sub">Na bancada agora</h3>
         <ul className="mt-5 grid gap-4 sm:grid-cols-2">
           {upcomingProjects.map((p) => (
-            <li key={p.name} className="rounded-[var(--raio-bloco)] border-[1.5px] border-dashed border-grafite/50 p-6">
+            <li key={p.name} className="relative rounded-[var(--raio-bloco)] border-[1.5px] border-dashed border-grafite/50 p-6 pr-20">
+              <Marca contorno className="absolute top-5 right-5 size-9 text-cobalto opacity-40" />
               <p className="font-display text-xl font-semibold">{p.name}</p>
               <p className="muted mt-1 text-[0.95rem]">{p.type}, em produção</p>
               <p className="mt-3">{p.description}</p>

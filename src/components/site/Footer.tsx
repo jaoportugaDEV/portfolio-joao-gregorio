@@ -1,11 +1,13 @@
 import { profile } from "@/data/profile";
+import { Marca } from "./Marca";
 
 export function Footer() {
   const { contacts } = profile;
   return (
     <footer className="border-t border-linha bg-giz">
       <div className="shell flex flex-col gap-4 py-8 text-[0.95rem] text-grafite sm:flex-row sm:items-center sm:justify-between">
-        <p>
+        <p className="flex items-center gap-2.5">
+          <Marca className="size-6 shrink-0 text-cobalto" />
           {profile.name}, {profile.role.toLowerCase()} em {profile.city}
         </p>
         <ul className="flex flex-wrap gap-x-5 gap-y-2">

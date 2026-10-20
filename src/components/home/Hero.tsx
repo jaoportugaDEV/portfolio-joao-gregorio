@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { mensagemPadrao, profile, whatsappLink } from "@/data/profile";
 import { janeBolos } from "@/data/projects/jane-bolos";
+import { Marca } from "@/components/site/Marca";
 import { Seta } from "./Seta";
 
 // A mesa: as peças do projeto mais recente espalhadas, com anotações à mão.
@@ -26,6 +27,12 @@ function Mesa() {
           className="h-auto w-full"
         />
       </div>
+
+      <Marca
+        pisca
+        className="mesa-peca absolute top-0 -left-[2%] w-[14%] text-cobalto drop-shadow-[0_6px_8px_rgb(22_27_51/0.22)]"
+        style={{ "--giro": "-9deg", "--giro-inicial": "-16deg", "--atraso": "640ms" } as React.CSSProperties}
+      />
 
       {cores && cores.kind === "palette" ? (
         <div
@@ -114,7 +121,8 @@ function Mesa() {
 
 export function Hero() {
   return (
-    <section className="shell grid items-center gap-x-12 gap-y-14 pt-12 pb-20 sm:pt-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:pt-20 lg:pb-12">
+    <section className="shell relative isolate grid items-center gap-x-12 gap-y-14 pt-12 pb-20 sm:pt-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:pt-20 lg:pb-12">
+      <div aria-hidden className="grade-pontos pointer-events-none absolute inset-0 -z-10 [--ponto:#b9c0d0]" />
       <div>
         <h1 className="t-display max-w-[12ch]">Sites e sistemas para pequenos negócios, feitos um de cada vez.</h1>
         <p className="t-lead muted mt-7 max-w-[46ch]">
