@@ -2,6 +2,7 @@
 // e mora no próprio arquivo em src/data/projects/. Para criar um novo, copie jane-bolos.ts.
 
 import { janeBolos } from "./projects/jane-bolos";
+import { ohMyDog } from "./projects/oh-my-dog-hotdog";
 import { zero18Burger } from "./projects/zero18-burger";
 
 export type Img = { src: string; alt: string; width: number; height: number };
@@ -67,7 +68,7 @@ export type UpcomingProject = {
   description: string;
 };
 
-export const caseStudies: CaseStudy[] = [janeBolos, zero18Burger];
+export const caseStudies: CaseStudy[] = [janeBolos, zero18Burger, ohMyDog];
 
 export const otherProjects: SimpleProject[] = [
   {
