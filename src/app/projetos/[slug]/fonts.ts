@@ -25,6 +25,11 @@ export const brandFonts: Record<string, BrandFonts> = {
     script: yellowtail.className,
     text: barlow.className,
   },
+  "arca-de-noe": {
+    display: lilita.className,
+    script: lilita.className,
+    text: nunito.className,
+  },
   "oh-my-dog-hotdog": {
     display: lilita.className,
     script: shrikhand.className,

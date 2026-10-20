@@ -1,6 +1,7 @@
 // Todos os projetos do portfólio. Um projeto com página de detalhes é um CaseStudy
 // e mora no próprio arquivo em src/data/projects/. Para criar um novo, copie jane-bolos.ts.
 
+import { arcaDeNoe } from "./projects/arca-de-noe";
 import { janeBolos } from "./projects/jane-bolos";
 import { ohMyDog } from "./projects/oh-my-dog-hotdog";
 import { zero18Burger } from "./projects/zero18-burger";
@@ -68,7 +69,7 @@ export type UpcomingProject = {
   description: string;
 };
 
-export const caseStudies: CaseStudy[] = [janeBolos, zero18Burger, ohMyDog];
+export const caseStudies: CaseStudy[] = [janeBolos, zero18Burger, ohMyDog, arcaDeNoe];
 
 export const otherProjects: SimpleProject[] = [
   {
