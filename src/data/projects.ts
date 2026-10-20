@@ -71,6 +71,7 @@ export type UpcomingProject = {
 
 export const caseStudies: CaseStudy[] = [janeBolos, zero18Burger, ohMyDog, arcaDeNoe];
 
+// Ocultos na home por enquanto (a lista fica guardada aqui): só os projetos com página própria aparecem.
 export const otherProjects: SimpleProject[] = [
   {
     kind: "simple",
@@ -113,12 +114,6 @@ export const otherProjects: SimpleProject[] = [
 ];
 
 export const upcomingProjects: UpcomingProject[] = [
-  {
-    kind: "upcoming",
-    name: "Arca de Noé Sorveteria",
-    type: "Site",
-    description: "Site da sorveteria, com a marca e os sabores em primeiro plano.",
-  },
   {
     kind: "upcoming",
     name: "Grandizolis Pizzaria",

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Marca } from "@/components/site/Marca";
-import { caseStudies, otherProjects, upcomingProjects, type CaseStudy } from "@/data/projects";
+import { caseStudies, upcomingProjects, type CaseStudy } from "@/data/projects";
 
 function Featured({ project }: { project: CaseStudy }) {
   const href = `/projetos/${project.slug}`;
@@ -92,29 +92,6 @@ export function Projects() {
           <Featured key={c.slug} project={c} />
         ))}
       </div>
-
-      <ul className="mt-16 divide-y divide-linha border-y border-linha">
-        {otherProjects.map((p) => (
-          <li key={p.name} className="grid gap-4 py-8 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] md:gap-10">
-            <div>
-              <h3 className="t-sub">{p.name}</h3>
-              <p className="muted mt-1 text-[0.95rem]">{p.status}</p>
-            </div>
-            <div>
-              <p className="texto">{p.description}</p>
-              <ul className="mt-3 list-disc space-y-1 pl-5 marker:text-cobalto">
-                {p.highlights.map((h) => (
-                  <li key={h}>{h}</li>
-                ))}
-              </ul>
-              <p className="muted mt-4 text-[0.9rem]">{p.stack.join(", ")}</p>
-              {p.confidential ? (
-                <p className="muted mt-2 text-[0.9rem] italic">Parte do contexto está sob confidencialidade.</p>
-              ) : null}
-            </div>
-          </li>
-        ))}
-      </ul>
 
       <div className="mt-16">
         <h3 className="t-sub">Na bancada agora</h3>
