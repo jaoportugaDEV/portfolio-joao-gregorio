@@ -21,7 +21,7 @@ export const grandizolisPizzaria: CaseStudy = {
   cardText:
     "Uma vitrine que dá fome: a fatia puxando queijo na primeira tela, uma roda de sabores que gira, bandejas de esfiha e um ingresso de rodízio que reconhece o dia de hoje.",
   facts: [
-    { label: "Cliente", value: "Grandizoli's Pizzaria & Esfiharia (projeto conceito, sem vínculo oficial)" },
+    { label: "Cliente", value: "Grandizoli's Pizzaria & Esfiharia, de um amigo (projeto feito por conta própria)" },
     { label: "Meu papel", value: "Conceito, direção de arte, imagens, animações e código" },
     { label: "Entregas", value: "Site, 12 pizzas e 11 bandejas de esfiha em arte própria, fundos animados e a logo preenchida" },
     { label: "Ferramentas", value: "Next.js, TypeScript, Tailwind e GSAP, mais ChatGPT para as imagens e Google Flow para os vídeos" },
@@ -161,7 +161,8 @@ export const grandizolisPizzaria: CaseStudy = {
   note: {
     title: "Por que eu fiz",
     paragraphs: [
-      "A pizzaria já tinha uma marca simpática e um site de pedidos que funciona, mas nada que fizesse alguém ficar com vontade antes de pedir. Fiz este projeto sem ela pedir, para mostrar como o mesmo humor, o verde da caixa e o xadrez podem virar uma vitrine que dá fome.",
+      "A Grandizoli's é a pizzaria de um amigo meu, que estudou comigo. Fiz este projeto por conta própria, sem ele pedir, porque queria ver o negócio dele com uma vitrine à altura da comida que ele faz.",
+      "A casa já tinha uma marca simpática e um site de pedidos que funciona, mas nada que desse vontade antes de pedir. Torci para este trabalho ajudar e, mais do que isso, espero que o negócio tenha muita prosperidade.",
     ],
   },
 };
