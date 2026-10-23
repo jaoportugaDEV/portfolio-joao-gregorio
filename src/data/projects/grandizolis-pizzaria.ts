@@ -30,7 +30,7 @@ export const grandizolisPizzaria: CaseStudy = {
   cover: tela("site-desktop.jpg", "Primeira tela do site da Grandizoli's, com a logo à esquerda e uma pizza de calabresa com a fatia levantada e o queijo esticando"),
   coverPhone: img("site-celular.jpg", "Site da Grandizoli's aberto no celular, com a logo no alto e a pizza ao centro", 780, 1688),
   showcase: tela("site-desktop-capa.jpg", "O site da Grandizoli's num notebook e num celular, sobre o verde e o vermelho da marca"),
-  sticker: img("mascote.png", "Mascote da Grandizoli's, um chef de bigode segurando duas fatias de pizza", 780, 658),
+  sticker: img("mascote.png", "Mascote da Grandizoli's, um chef de bigode segurando duas fatias de pizza", 780, 581),
   deliverables: ["Site", "Pizzas e esfihas", "Animações"],
   theme: {
     bg: "#F7F3EA",
