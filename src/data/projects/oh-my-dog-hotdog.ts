@@ -30,7 +30,7 @@ export const ohMyDog: CaseStudy = {
   links: { site: "https://oh-my-dog-hotdog.vercel.app" },
   cover: tela("site-desktop.jpg", "Primeira tela do site da Oh My Dog: o título Sua noite pede um dog ao lado da fachada amarela com toldo verde e a mascote na porta"),
   coverPhone: celular("site-celular.jpg", "Site da Oh My Dog aberto no celular"),
-  showcase: tela("site-desktop-como-nasce.jpg", "Cena Como nasce um Oh My Dog, com o dog completo sobre a toalha xadrez e a mascote comemorando"),
+  showcase: img("site-desktop-capa.jpg", "O site da Oh My Dog num notebook e num celular, sobre o verde e o amarelo da marca", 2160, 1350),
   sticker: img("turma.webp", "A Mostarda piscando, comemorando e com fome", 704, 245),
   deliverables: ["Site", "Mascote", "Montador", "Cardápio"],
   theme: {

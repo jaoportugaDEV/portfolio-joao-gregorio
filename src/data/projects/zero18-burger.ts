@@ -29,7 +29,7 @@ export const zero18Burger: CaseStudy = {
   links: { site: "https://zero18-burger.vercel.app" },
   cover: tela("site-desktop.jpg", "Página inicial do site da Zero18 Burger, com o título Hambúrguer de Parrilla e o selo 3x campeã"),
   coverPhone: img("site-celular.jpg", "Site da Zero18 Burger aberto no celular", 780, 1688),
-  showcase: tela("site-desktop-chicken.jpg", "Cena do Me Gusta Chicken, com o burger de frango em fundo preto e fogo de verdade subindo"),
+  showcase: img("site-desktop-capa.jpg", "O site da Zero18 Burger num notebook e num celular, sobre o preto e o vermelho da marca", 2160, 1350),
   deliverables: ["Site", "Cardápio", "Quiz", "Vídeo", "Reel"],
   theme: {
     bg: "#111111",

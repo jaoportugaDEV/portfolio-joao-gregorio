@@ -30,7 +30,7 @@ export const arcaDeNoe: CaseStudy = {
   links: { site: "https://arca-de-noe-alpha.vercel.app" },
   cover: tela("site-desktop.jpg", "Primeira tela do site da Arca de Noé, com o letreiro ARCA DE NOÉ em listras de arco-íris sobre o céu e a mão levantando um milkshake de açaí"),
   coverPhone: img("site-celular.jpg", "Site da Arca de Noé aberto no celular", 780, 1688),
-  showcase: tela("site-desktop-escorregador.jpg", "Os bichos da Turma da Arca escorregando num arco-íris gigante, com a litografia da arca de Noé no vão"),
+  showcase: img("site-desktop-capa.jpg", "O site da Arca de Noé num notebook e num celular, sobre o azul e o turquesa da marca", 2160, 1350),
   sticker: bicho("turma-elefante.png", "Elefante da Turma da Arca com um sorvete na mão"),
   deliverables: ["Site", "Guia de marca", "Logo", "Personagens"],
   theme: {

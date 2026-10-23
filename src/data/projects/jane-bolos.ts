@@ -30,7 +30,7 @@ export const janeBolos: CaseStudy = {
   links: { site: "https://jane-bolos.vercel.app" },
   cover: img("site-desktop.jpg", "Página inicial do site da Jane Bolos, com o bolo de chocolate e morangos", 2160, 1350),
   coverPhone: img("site-celular.jpg", "Site da Jane Bolos aberto no celular", 780, 1688),
-  showcase: img("site-desktop-montador.jpg", "Montador de encomenda do site da Jane Bolos", 2160, 1350),
+  showcase: img("site-desktop-capa.jpg", "O site da Jane Bolos num notebook e num celular, sobre o vermelho e o marrom da marca", 2160, 1350),
   sticker: img("turma.webp", "Fatinha, Granulado e Coxita, os mascotes da Jane", 791, 316),
   deliverables: ["Site", "Mascotes", "Vídeo", "Kit de redes", "Guia de marca"],
   theme: {
