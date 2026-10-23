@@ -13,6 +13,8 @@ export default function Home() {
       <Process />
       <About />
       <Contact />
+      {/* espaço para o guia fixo no canto não cobrir o rodapé no celular */}
+      <div aria-hidden className="h-20 sm:hidden" />
       <Guia />
     </main>
   );

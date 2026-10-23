@@ -16,6 +16,17 @@ function Figura({ image, sizes, caption }: { image: Img; sizes: string; caption?
   );
 }
 
+// Em telas pequenas as galerias viram uma coluna só; prints estreitos (celular) não esticam a largura toda.
+function mobileFino(layout: string, proporcao: number) {
+  return layout !== "pages" && proporcao < 0.8 ? "mx-auto w-[62%] max-w-[16rem] sm:w-auto sm:max-w-none" : "";
+}
+
+function sizesGaleria(layout: string) {
+  if (layout === "screens") return "(min-width: 1200px) 640px, (min-width: 640px) 55vw, 92vw";
+  if (layout === "duo") return "(min-width: 1200px) 560px, (min-width: 640px) 50vw, 92vw";
+  return "(min-width: 1200px) 440px, (min-width: 640px) 45vw, 92vw";
+}
+
 export function BlockView({ block, fonts }: { block: Block; fonts?: BrandFonts }) {
   switch (block.kind) {
     case "text":
@@ -77,21 +88,21 @@ export function BlockView({ block, fonts }: { block: Block; fonts?: BrandFonts }
     case "gallery": {
       const grid =
         block.layout === "screens"
-          ? "grid-cols-[minmax(0,3fr)_minmax(0,1fr)] items-end"
+          ? "sm:grid-cols-[minmax(0,3fr)_minmax(0,1fr)] items-end"
           : block.layout === "duo"
-            ? "grid-cols-[minmax(0,1fr)_minmax(0,0.56fr)] items-end"
+            ? "sm:grid-cols-[minmax(0,1fr)_minmax(0,0.56fr)] items-end"
             : "sm:grid-cols-2 items-start";
       return (
         <figure>
           <div className={`grid gap-4 sm:gap-6 ${grid}`}>
             {block.images.map((im) => (
-              <div key={im.src} className="peca">
+              <div key={im.src} className={`peca ${mobileFino(block.layout, im.width / im.height)}`}>
                 <Image
                   src={im.src}
                   alt={im.alt}
                   width={im.width}
                   height={im.height}
-                  sizes="(min-width: 1200px) 640px, 70vw"
+                  sizes={sizesGaleria(block.layout)}
                   className="h-auto w-full"
                 />
               </div>

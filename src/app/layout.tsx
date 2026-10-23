@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
@@ -23,6 +23,10 @@ const bricolage = Bricolage_Grotesque({
 
 const descricao =
   "Sites e sistemas para pequenos negócios. Cada projeto mostra a criação inteira: a ideia, a marca, o código e o porquê de cada escolha.";
+
+export const viewport: Viewport = {
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(profile.siteUrl),

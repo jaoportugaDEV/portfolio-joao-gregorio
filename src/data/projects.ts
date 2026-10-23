@@ -2,6 +2,7 @@
 // e mora no próprio arquivo em src/data/projects/. Para criar um novo, copie jane-bolos.ts.
 
 import { arcaDeNoe } from "./projects/arca-de-noe";
+import { grandizolisPizzaria } from "./projects/grandizolis-pizzaria";
 import { janeBolos } from "./projects/jane-bolos";
 import { ohMyDog } from "./projects/oh-my-dog-hotdog";
 import { zero18Burger } from "./projects/zero18-burger";
@@ -69,7 +70,7 @@ export type UpcomingProject = {
   description: string;
 };
 
-export const caseStudies: CaseStudy[] = [janeBolos, zero18Burger, ohMyDog, arcaDeNoe];
+export const caseStudies: CaseStudy[] = [janeBolos, zero18Burger, ohMyDog, arcaDeNoe, grandizolisPizzaria];
 
 // Ocultos na home por enquanto (a lista fica guardada aqui): só os projetos com página própria aparecem.
 export const otherProjects: SimpleProject[] = [
@@ -113,14 +114,7 @@ export const otherProjects: SimpleProject[] = [
   },
 ];
 
-export const upcomingProjects: UpcomingProject[] = [
-  {
-    kind: "upcoming",
-    name: "Grandizolis Pizzaria",
-    type: "Site",
-    description: "Site da pizzaria, com o cardápio e o pedido em primeiro plano.",
-  },
-];
+export const upcomingProjects: UpcomingProject[] = [];
 
 export function getCase(slug: string) {
   return caseStudies.find((c) => c.slug === slug);

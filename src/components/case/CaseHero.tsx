@@ -6,10 +6,10 @@ export function CaseHero({ project }: { project: CaseStudy }) {
   return (
     <header>
       <div className="shell pt-10 pb-14 lg:pt-14 lg:pb-20">
-        <Link href="/#projetos" className="link text-[0.95rem]">
+        <Link href="/#projetos" className="link inline-flex min-h-11 items-center text-[0.95rem]">
           Todos os projetos
         </Link>
-        <div className="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:gap-16">
+        <div className="mt-4 grid gap-10 sm:mt-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:gap-16">
           <div>
             <p className="font-medium" style={{ color: "var(--case-accent-text)" }}>
               {project.type}, {project.place}, {project.year}
@@ -43,25 +43,25 @@ export function CaseHero({ project }: { project: CaseStudy }) {
       </div>
 
       <div style={{ background: "var(--case-accent)" }}>
-        <div className="shell relative py-10 sm:py-14 lg:py-16">
-          <div className="peca w-[86%] sm:w-[80%]">
+        <div className="shell relative pt-10 pb-16 sm:py-14 lg:py-16">
+          <div className="peca w-[88%] sm:w-[80%]">
             <Image
               src={project.cover.src}
               alt={project.cover.alt}
               width={project.cover.width}
               height={project.cover.height}
-              sizes="(min-width: 1200px) 920px, 80vw"
+              sizes="(min-width: 1200px) 920px, (min-width: 640px) 80vw, 88vw"
               priority
               className="h-auto w-full"
             />
           </div>
-          <div className="peca absolute right-4 bottom-6 w-[27%] max-w-[15rem] rotate-[2.5deg] sm:right-8 sm:bottom-8">
+          <div className="peca absolute right-4 bottom-3 w-[28%] max-w-[15rem] sm:right-8 sm:bottom-8 sm:w-[27%] sm:rotate-[2.5deg]">
             <Image
               src={project.coverPhone.src}
               alt={project.coverPhone.alt}
               width={project.coverPhone.width}
               height={project.coverPhone.height}
-              sizes="(min-width: 1200px) 240px, 27vw"
+              sizes="(min-width: 1200px) 240px, 28vw"
               priority
               className="h-auto w-full"
             />

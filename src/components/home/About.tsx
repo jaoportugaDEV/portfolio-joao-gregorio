@@ -49,7 +49,7 @@ export function About() {
             </div>
           ))}
         </dl>
-        <a href={profile.cvUrl} download="Curriculo_Joao_Desenvolvedor.pdf" className="link mt-8 inline-block">
+        <a href={profile.cvUrl} download="Curriculo_Joao_Desenvolvedor.pdf" className="link mt-8 inline-flex min-h-11 items-center">
           Baixar o currículo em PDF
         </a>
       </div>

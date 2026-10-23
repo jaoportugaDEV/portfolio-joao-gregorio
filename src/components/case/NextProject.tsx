@@ -13,13 +13,15 @@ export function NextProject({ current }: { current: string }) {
             <span className="muted block text-[0.95rem]">Próximo projeto</span>
             <span className="t-sub group-hover:underline group-hover:underline-offset-4">{next.name}</span>
           </Link>
-        ) : (
+        ) : upcomingProjects.length > 0 ? (
           <p className="max-w-[48ch]">
             <span className="muted block text-[0.95rem]">Próximos da série</span>
             {upcomingProjects.map((p) => p.name).join(" e ")} estão em produção.
           </p>
+        ) : (
+          <span />
         )}
-        <Link href="/#projetos" className="link">
+        <Link href="/#projetos" className="link inline-flex min-h-11 items-center">
           Ver todos os projetos
         </Link>
       </div>

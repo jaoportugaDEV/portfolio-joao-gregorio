@@ -12,6 +12,8 @@ export const profile = {
     email: "joao.portuga2001@gmail.com",
     linkedin: "https://linkedin.com/in/joao-gregorio123",
     github: "https://github.com/jaoportugaDEV",
+    instagram: "https://www.instagram.com/j.victorszz/",
+    instagramLabel: "@j.victorszz",
   },
   cvUrl: "/Curriculo_Joao_Desenvolvedor.pdf",
   photo: "/joao-profile.png",

@@ -15,11 +15,14 @@ export function Contact({ titulo = "Tem um negócio que precisa aparecer melhor 
           <a href={whatsappLink(mensagemPadrao)} target="_blank" rel="noreferrer" className="btn btn-cheio">
             Chamar no WhatsApp
           </a>
+          <a href={contacts.instagram} target="_blank" rel="noreferrer" className="btn btn-linha">
+            Ver no Instagram
+          </a>
           <a href={`mailto:${contacts.email}`} className="btn btn-linha">
             Mandar um e-mail
           </a>
         </div>
-        <dl className="mt-12 grid gap-6 border-t border-linha pt-8 text-[0.95rem] sm:grid-cols-3">
+        <dl className="mt-12 grid gap-6 border-t border-linha pt-8 text-[0.95rem] sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <dt className="muted">WhatsApp</dt>
             <dd className="mt-1">{contacts.whatsappLabel}</dd>
@@ -27,6 +30,14 @@ export function Contact({ titulo = "Tem um negócio que precisa aparecer melhor 
           <div>
             <dt className="muted">E-mail</dt>
             <dd className="mt-1 break-all">{contacts.email}</dd>
+          </div>
+          <div>
+            <dt className="muted">Instagram</dt>
+            <dd className="mt-1">
+              <a href={contacts.instagram} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center underline-offset-4 hover:underline">
+                {contacts.instagramLabel}
+              </a>
+            </dd>
           </div>
           <div>
             <dt className="muted">Onde estou</dt>

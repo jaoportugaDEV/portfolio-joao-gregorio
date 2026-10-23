@@ -2,7 +2,7 @@
 
 // Guia do site: o mini-João no canto, com um balão que muda conforme a seção na tela.
 // Dá para esconder o balão; a escolha fica guardada neste navegador.
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { mensagemPadrao, whatsappLink } from "@/data/profile";
 import { MiniJoao } from "@/components/site/MiniJoao";
 
@@ -33,24 +33,46 @@ export function Guia() {
   const [mostrados, setMostrados] = useState(0); // letras já "faladas"
   const [aberto, setAberto] = useState(false);
   const [acenando, setAcenando] = useState(false);
-  // sem animação, o balão mostra o texto inteiro de uma vez (o balão só aparece no navegador)
-  const [reduz] = useState(() => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  // sem animação (ou em tela pequena), o balão mostra o texto inteiro de uma vez: nada de timers
+  const [simples, setSimples] = useState(true);
+  // em tela pequena o balão só abre quando a pessoa toca no guia
+  const pequena = useRef(true);
 
-  // primeira aparição: acena e abre o balão, a menos que a pessoa já tenha escondido
+  useEffect(() => {
+    const reduz = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const estreita = window.matchMedia("(max-width: 1023px)");
+    const le = () => {
+      pequena.current = estreita.matches;
+      setSimples(reduz.matches || estreita.matches);
+    };
+    le();
+    reduz.addEventListener("change", le);
+    estreita.addEventListener("change", le);
+    return () => {
+      reduz.removeEventListener("change", le);
+      estreita.removeEventListener("change", le);
+    };
+  }, []);
+
+  // primeira aparição: acena e, em telas maiores, abre o balão, a menos que a pessoa já tenha escondido
   useEffect(() => {
     let escondido = false;
     try {
       escondido = window.localStorage.getItem(CHAVE) === "1";
     } catch {}
+    let t2 = 0;
     const t = window.setTimeout(() => {
-      if (!escondido) {
+      if (!escondido && !pequena.current) {
         setMostrados(0);
         setAberto(true);
       }
       setAcenando(true);
-      window.setTimeout(() => setAcenando(false), 1900);
+      t2 = window.setTimeout(() => setAcenando(false), 1900);
     }, 1200);
-    return () => window.clearTimeout(t);
+    return () => {
+      window.clearTimeout(t);
+      window.clearTimeout(t2);
+    };
   }, []);
 
   // qual seção está no meio da tela
@@ -76,9 +98,9 @@ export function Guia() {
     return () => obs.disconnect();
   }, []);
 
-  // efeito de fala: as letras aparecem em sequência (sem animação, o texto vem inteiro)
+  // efeito de fala: as letras aparecem em sequência (um único timer; a boca segue o ritmo das letras)
   const total = fala.texto.length;
-  const visiveis = reduz ? total : Math.min(mostrados, total);
+  const visiveis = simples ? total : Math.min(mostrados, total);
   const falando = aberto && visiveis < total;
 
   useEffect(() => {
@@ -87,14 +109,7 @@ export function Guia() {
     return () => window.clearInterval(id);
   }, [falando]);
 
-  // boca mexe enquanto fala
-  const [mexe, setMexe] = useState(false);
-  useEffect(() => {
-    if (!falando) return;
-    const id = window.setInterval(() => setMexe((b) => !b), 130);
-    return () => window.clearInterval(id);
-  }, [falando]);
-  const bocaAberta = falando && mexe;
+  const bocaAberta = falando && Math.floor(mostrados / 6) % 2 === 1;
 
   const alterna = () => {
     const proximo = !aberto;
@@ -106,11 +121,11 @@ export function Guia() {
   };
 
   return (
-    <aside aria-label="Guia do site" className="fixed right-3 bottom-3 z-40 flex items-end gap-2 sm:right-6 sm:bottom-6">
+    <aside aria-label="Guia do site" className="fixed right-3 bottom-[max(0.75rem,env(safe-area-inset-bottom))] z-40 flex items-end gap-2 sm:right-6 sm:bottom-6">
       {aberto ? (
         <div
           key={fala.id}
-          className="balao-entra relative mb-10 w-[min(19rem,calc(100vw-7.5rem))] rounded-2xl rounded-br-md border border-cobalto/40 bg-[#f3f5ff] px-4 py-3 text-[0.92rem] leading-snug text-[#0b1022] shadow-[0_18px_40px_-14px_rgb(0_0_0/0.8)]"
+          className="balao-entra relative mb-6 w-[min(19rem,calc(100vw-6.5rem))] sm:mb-10 sm:w-[min(19rem,calc(100vw-7.5rem))] rounded-2xl rounded-br-md border border-cobalto/40 bg-[#f3f5ff] py-3 pr-11 pl-4 text-[0.92rem] sm:px-4 leading-snug text-[#0b1022] shadow-[0_18px_40px_-14px_rgb(0_0_0/0.8)]"
         >
           <p>
             {fala.texto.slice(0, visiveis)}
@@ -121,7 +136,7 @@ export function Guia() {
               href={fala.acao.href}
               target="_blank"
               rel="noreferrer"
-              className="mt-2.5 inline-flex rounded-lg bg-[#4f5dff] px-3 py-1.5 text-[0.85rem] font-semibold text-white hover:bg-[#3b49f0]"
+              className="mt-2.5 inline-flex min-h-11 items-center rounded-lg bg-[#4f5dff] px-3 py-1.5 text-[0.85rem] font-semibold text-white hover:bg-[#3b49f0]"
             >
               {fala.acao.rotulo}
             </a>
@@ -130,7 +145,7 @@ export function Guia() {
             type="button"
             onClick={alterna}
             aria-label="Esconder o balão do guia"
-            className="absolute -top-2.5 -left-2.5 grid size-7 place-items-center rounded-full border border-linha bg-giz text-[0.9rem] leading-none text-nanquim hover:bg-folha"
+            className="absolute top-0 right-0 grid size-11 place-items-center text-[1.4rem] leading-none text-[#0b1022] sm:-top-2.5 sm:-left-2.5 sm:right-auto sm:size-7 sm:rounded-full sm:border sm:border-linha sm:bg-giz sm:text-[0.9rem] sm:text-nanquim sm:hover:bg-folha"
           >
             ×
           </button>
@@ -142,7 +157,7 @@ export function Guia() {
         onClick={alterna}
         aria-label={aberto ? "Esconder o balão do guia" : "Mostrar o que o guia tem a dizer"}
         aria-expanded={aberto}
-        className="group relative grid size-20 shrink-0 place-items-end overflow-visible rounded-full border border-linha bg-folha shadow-[0_12px_30px_-10px_rgb(0_0_0/0.8)] transition-colors hover:border-cobalto sm:size-24"
+        className="group relative grid size-14 shrink-0 place-items-end overflow-visible rounded-full border border-linha bg-folha shadow-[0_12px_30px_-10px_rgb(0_0_0/0.8)] transition-colors sm:size-24 [@media(hover:hover)]:hover:border-cobalto"
       >
         <span className="absolute inset-0 overflow-hidden rounded-full">
           <span className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgb(107_120_255/0.35),transparent_65%)]" />

@@ -142,8 +142,10 @@ body {
     color: #fff;
   }
 
-  .btn-cheio:hover {
-    background: var(--cobalto-escuro);
+  @media (hover: hover) {
+    .btn-cheio:hover {
+      background: var(--cobalto-escuro);
+    }
   }
 
   .btn-linha {
@@ -151,9 +153,11 @@ body {
     color: var(--nanquim);
   }
 
-  .btn-linha:hover {
-    background: var(--nanquim);
-    color: var(--giz);
+  @media (hover: hover) {
+    .btn-linha:hover {
+      background: var(--nanquim);
+      color: var(--giz);
+    }
   }
 
   .link {
@@ -164,8 +168,10 @@ body {
     text-underline-offset: 0.2em;
   }
 
-  .link:hover {
-    color: var(--cobalto-escuro);
+  @media (hover: hover) {
+    .link:hover {
+      color: var(--cobalto-escuro);
+    }
   }
 
   /* Print sobre a mesa: moldura branca e sombra curta, como papel. */
@@ -198,9 +204,12 @@ body {
 }
 
 /* Capítulos fora da tela não entram no cálculo de layout até chegarem perto. */
-.capitulo {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 1400px;
+/* Só em telas largas: no celular os capítulos são bem mais altos que a estimativa e o scroll pulava. */
+@media (min-width: 1024px) {
+  .capitulo {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 1400px;
+  }
 }
 
 /* Página de projeto: a marca do cliente assume, e os prints voltam a ter moldura branca. */
@@ -219,7 +228,8 @@ body {
   outline-color: var(--case-accent-text);
 }
 
-.case .link {
+.case .link,
+.case .link:hover {
   color: var(--case-accent-text);
 }
 
@@ -228,8 +238,10 @@ body {
   color: var(--case-bg);
 }
 
-.case .btn-cheio:hover {
-  background: var(--case-accent-text);
+@media (hover: hover) {
+  .case .btn-cheio:hover {
+    background: var(--case-accent-text);
+  }
 }
 
 .case .btn-linha {
@@ -237,9 +249,11 @@ body {
   color: var(--case-ink);
 }
 
-.case .btn-linha:hover {
-  background: var(--case-ink);
-  color: var(--case-bg);
+@media (hover: hover) {
+  .case .btn-linha:hover {
+    background: var(--case-ink);
+    color: var(--case-bg);
+  }
 }
 
 .case .tag {
@@ -270,8 +284,10 @@ body {
     background-color 160ms ease,
     box-shadow 200ms ease;
 }
-.btn-cheio:hover {
-  box-shadow: 0 8px 28px -8px rgb(107 120 255 / 0.7);
+@media (hover: hover) {
+  .btn-cheio:hover {
+    box-shadow: 0 8px 28px -8px rgb(107 120 255 / 0.7);
+  }
 }
 
 /* Editor do hero: cada linha se digita uma vez, na ordem. */
@@ -354,11 +370,13 @@ body {
     box-shadow 260ms ease;
   box-shadow: 0 0 0 1px rgb(255 255 255 / 0.06);
 }
-.card-projeto:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 0 0 1px rgb(107 120 255 / 0.55),
-    0 24px 50px -20px rgb(0 0 0 / 0.8);
+@media (hover: hover) {
+  .card-projeto:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 0 0 1px rgb(107 120 255 / 0.55),
+      0 24px 50px -20px rgb(0 0 0 / 0.8);
+  }
 }
 
 /* Guia: o mini-João no canto. */
@@ -407,6 +425,20 @@ body {
   from {
     opacity: 0;
     transform: translateY(8px) scale(0.96);
+  }
+}
+
+/* Celular: menos coisa se mexendo na primeira pintura (código já pronto, prévia sem entrada, guia parado). */
+@media (max-width: 639px) {
+  .codigo-linha {
+    width: auto;
+    animation: none;
+  }
+  .cursor,
+  .previa-sobe,
+  .guia-boneco,
+  .guia-olhos {
+    animation: none;
   }
 }
 

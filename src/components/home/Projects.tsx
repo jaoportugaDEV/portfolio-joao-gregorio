@@ -10,7 +10,7 @@ function Featured({ project }: { project: CaseStudy }) {
       className="card-projeto grid gap-8 overflow-hidden rounded-[var(--raio-bloco)] p-5 sm:p-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] lg:gap-12 lg:p-10"
       style={{ background: project.theme.bg, color: project.theme.ink }}
     >
-      <Link href={href} tabIndex={-1} aria-hidden className="relative block">
+      <Link href={href} tabIndex={-1} aria-hidden className="relative mb-6 block lg:mb-0">
         <div className="peca">
           <Image
             src={project.showcase.src}
@@ -28,7 +28,7 @@ function Featured({ project }: { project: CaseStudy }) {
             width={project.sticker.width}
             height={project.sticker.height}
             sizes="(min-width: 1024px) 260px, 50vw"
-            className="absolute -bottom-6 left-1/2 w-[52%] max-w-[17rem] -translate-x-1/2 drop-shadow-[0_6px_8px_rgb(87_45_43/0.3)]"
+            className="pointer-events-none absolute -bottom-6 left-1/2 w-[44%] max-w-[17rem] -translate-x-1/2 sm:w-[52%] drop-shadow-[0_6px_8px_rgb(87_45_43/0.3)]"
           />
         ) : null}
       </Link>
@@ -37,7 +37,7 @@ function Featured({ project }: { project: CaseStudy }) {
           {project.type}, {project.year}
         </p>
         <h3 className="t-titulo mt-2">
-          <Link href={href} className="hover:underline hover:decoration-2 hover:underline-offset-4">
+          <Link href={href} className="inline-flex min-h-11 items-center hover:underline hover:decoration-2 hover:underline-offset-4">
             {project.name}
           </Link>
         </h3>
@@ -66,7 +66,7 @@ function Featured({ project }: { project: CaseStudy }) {
               href={project.links.site}
               target="_blank"
               rel="noreferrer"
-              className="font-semibold underline decoration-[1.5px] underline-offset-4"
+              className="inline-flex min-h-11 items-center font-semibold underline decoration-[1.5px] underline-offset-4"
             >
               Abrir o site
             </a>
@@ -93,6 +93,7 @@ export function Projects() {
         ))}
       </div>
 
+      {upcomingProjects.length > 0 && (
       <div className="mt-16">
         <h3 className="t-sub">Na bancada agora</h3>
         <ul className="mt-5 grid gap-4 sm:grid-cols-2">
@@ -106,6 +107,7 @@ export function Projects() {
           ))}
         </ul>
       </div>
+      )}
     </section>
   );
 }
