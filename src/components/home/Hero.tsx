@@ -24,7 +24,7 @@ export function Hero() {
           </div>
         </div>
         <div>
-          <Vitrine projetos={caseStudies} />
+          <Vitrine projetos={[...caseStudies].reverse()} />
         </div>
       </div>
     </section>
