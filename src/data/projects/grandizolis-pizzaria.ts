@@ -162,7 +162,7 @@ export const grandizolisPizzaria: CaseStudy = {
     title: "Por que eu fiz",
     paragraphs: [
       "A Grandizoli's é a pizzaria de um amigo meu, que estudou comigo. Fiz este projeto por conta própria, sem ele pedir, porque queria ver o negócio dele com uma vitrine à altura da comida que ele faz.",
-      "A casa já tinha uma marca simpática e um site de pedidos que funciona, mas nada que desse vontade antes de pedir. Torci para este trabalho ajudar e, mais do que isso, espero que o negócio tenha muita prosperidade.",
+      "A casa já tinha uma marca simpática e um site de pedidos que funciona, mas nada que desse vontade antes de pedir. Desejo muito sucesso para ele e para a Grandizoli's, e que este trabalho ajude a encher a casa de gente com fome.",
     ],
   },
 };
