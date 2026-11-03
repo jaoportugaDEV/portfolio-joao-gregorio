@@ -5,6 +5,7 @@ import { arcaDeNoe } from "./projects/arca-de-noe";
 import { grandizolisPizzaria } from "./projects/grandizolis-pizzaria";
 import { janeBolos } from "./projects/jane-bolos";
 import { ohMyDog } from "./projects/oh-my-dog-hotdog";
+import { starttravel } from "./projects/starttravel";
 import { zero18Burger } from "./projects/zero18-burger";
 
 export type Img = { src: string; alt: string; width: number; height: number };
@@ -70,7 +71,7 @@ export type UpcomingProject = {
   description: string;
 };
 
-export const caseStudies: CaseStudy[] = [janeBolos, zero18Burger, ohMyDog, arcaDeNoe, grandizolisPizzaria];
+export const caseStudies: CaseStudy[] = [janeBolos, zero18Burger, ohMyDog, arcaDeNoe, grandizolisPizzaria, starttravel];
 
 // Ocultos na home por enquanto (a lista fica guardada aqui): só os projetos com página própria aparecem.
 export const otherProjects: SimpleProject[] = [

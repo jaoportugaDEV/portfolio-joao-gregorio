@@ -1,4 +1,4 @@
-import { Anton, Barlow, Figtree, Fraunces, Lilita_One, Nunito, Pacifico, Poppins, Shrikhand, Yellowtail } from "next/font/google";
+import { Anton, Barlow, Figtree, Fraunces, Lilita_One, Nunito, Pacifico, Plus_Jakarta_Sans, Poppins, Shrikhand, Yellowtail } from "next/font/google";
 
 // Fontes da marca de cada cliente, usadas no espécime de tipografia e nos nomes dos mascotes.
 // O next/font só carrega estas fontes na página do projeto.
@@ -12,6 +12,8 @@ const lilita = Lilita_One({ subsets: ["latin"], weight: "400", display: "swap", 
 const shrikhand = Shrikhand({ subsets: ["latin"], weight: "400", display: "swap", preload: false });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "800"], display: "swap", preload: false });
 const figtree = Figtree({ subsets: ["latin"], weight: ["400"], display: "swap", preload: false });
+const frauncesItalico = Fraunces({ subsets: ["latin"], weight: "400", style: "italic", display: "swap", preload: false });
+const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["400", "800"], display: "swap", preload: false });
 
 export type BrandFonts = { display: string; script: string; text: string };
 
@@ -35,6 +37,11 @@ export const brandFonts: Record<string, BrandFonts> = {
     display: lilita.className,
     script: shrikhand.className,
     text: figtree.className,
+  },
+  starttravel: {
+    display: jakarta.className,
+    script: frauncesItalico.className,
+    text: jakarta.className,
   },
   "grandizolis-pizzaria": {
     display: poppins.className,
