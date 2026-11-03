@@ -13,7 +13,7 @@ const shrikhand = Shrikhand({ subsets: ["latin"], weight: "400", display: "swap"
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "800"], display: "swap", preload: false });
 const figtree = Figtree({ subsets: ["latin"], weight: ["400"], display: "swap", preload: false });
 const frauncesItalico = Fraunces({ subsets: ["latin"], weight: "400", style: "italic", display: "swap", preload: false });
-const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["400", "800"], display: "swap", preload: false });
+const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], display: "swap", preload: false });
 
 export type BrandFonts = { display: string; script: string; text: string };
 
