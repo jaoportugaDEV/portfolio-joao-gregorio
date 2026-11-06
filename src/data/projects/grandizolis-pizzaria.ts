@@ -17,13 +17,13 @@ export const grandizolisPizzaria: CaseStudy = {
   place: "Pirapozinho/SP",
   year: "2026",
   summary:
-    "A Grandizoli's é uma pizzaria e esfiharia de Pirapozinho que já recebe os pedidos por um site próprio. Fiz por conta própria uma vitrine que não vende nada: ela existe para dar fome e levar a pessoa ao pedido. Tem uma cena animada de pizza na primeira tela, uma roda que gira entre doze sabores, uma bandeja de esfihas, o preparo em vídeo e um ingresso de rodízio que sabe em que dia da semana a pessoa está.",
+    "A Grandizoli's é uma pizzaria e esfiharia de Pirapozinho que já recebe os pedidos por um site próprio. Comecei por conta própria uma vitrine que não vende nada: ela existe para dar fome e levar a pessoa ao pedido. Tem uma cena animada de pizza na primeira tela, uma roda que gira entre doze sabores, uma bandeja de esfihas, o preparo em vídeo e um ingresso de rodízio que sabe em que dia da semana a pessoa está. Além do site, desenhei a placa de mesa com QR code, o cartão de avaliação do delivery e um ímã de geladeira.",
   cardText:
     "Uma vitrine que dá fome: a fatia puxando queijo na primeira tela, uma roda de sabores que gira, bandejas de esfiha e um ingresso de rodízio que reconhece o dia de hoje.",
   facts: [
-    { label: "Cliente", value: "Grandizoli's Pizzaria & Esfiharia, de um amigo (projeto feito por conta própria)" },
+    { label: "Cliente", value: "Grandizoli's Pizzaria & Esfiharia, de um amigo (feito de graça, com as ideias aprovadas pelo dono)" },
     { label: "Meu papel", value: "Conceito, direção de arte, imagens, animações e código" },
-    { label: "Entregas", value: "Site, 12 pizzas e 11 bandejas de esfiha em arte própria, fundos animados e a logo preenchida" },
+    { label: "Entregas", value: "Site, 12 pizzas e 11 bandejas de esfiha em arte própria, fundos animados, a logo preenchida e três peças impressas (placa de mesa, cartão de delivery e ímã)" },
     { label: "Ferramentas", value: "Next.js, TypeScript, Tailwind e GSAP, mais ChatGPT para as imagens e Google Flow para os vídeos" },
   ],
   links: { site: "https://grandizolis-pizzaria.vercel.app" },
@@ -31,7 +31,7 @@ export const grandizolisPizzaria: CaseStudy = {
   coverPhone: img("site-celular.jpg", "Site da Grandizoli's aberto no celular, com a logo no alto e a pizza ao centro", 780, 1688),
   showcase: tela("site-desktop-capa.jpg", "O site da Grandizoli's num notebook e num celular, sobre o verde e o vermelho da marca"),
   sticker: img("mascote.png", "Selo com a logo da Grandizoli's: um chef de bigode segurando duas fatias de pizza", 780, 780),
-  deliverables: ["Site", "Pizzas e esfihas", "Animações"],
+  deliverables: ["Site", "Pizzas e esfihas", "Materiais impressos"],
   theme: {
     bg: "#F7F3EA",
     ink: "#03402A",
@@ -143,6 +143,52 @@ export const grandizolisPizzaria: CaseStudy = {
       ],
     },
     {
+      id: "materiais",
+      title: "Para as mesas, o delivery e a geladeira",
+      blocks: [
+        {
+          kind: "text",
+          paragraphs: [
+            "Depois do site, fui além da tela e desenhei três peças impressas, as ideias que o dono gostou e que estou fazendo para ele de graça. Todas usam o xadrez, as cores e o mascote da casa, e foram preparadas com sangria e xadrez em vetor para a gráfica imprimir sem borrar.",
+            "A primeira é a placa de mesa, de 10 × 15 cm, com uma tag NFC e um QR code. A pessoa encosta o celular, ou lê o código, e cai direto na avaliação da casa no Google. O texto convida a contar como foi, sem oferecer brinde nem desconto em troca de nota, porque o Google proíbe avaliação incentivada.",
+          ],
+        },
+        {
+          kind: "image",
+          image: img("placa-mesa.jpg", "Placa de mesa da Grandizoli's, em creme com borda de xadrez verde e moldura vermelha, com o mascote, a frase Gostou? Conta pra gente!, cinco estrelas e um QR code", 1100, 1650),
+          caption: "A placa de mesa, 10 × 15 cm, com NFC e QR code para avaliar no Google.",
+          size: "column",
+        },
+        {
+          kind: "text",
+          paragraphs: [
+            "A segunda peça é um cartão pequeno de 9 × 5,5 cm para colocar dentro dos pedidos de delivery. A frente pergunta \"Gostou do seu pedido?\" e leva ao mesmo QR de avaliação. O verso fixa a marca: logo, Instagram e endereço.",
+          ],
+        },
+        {
+          kind: "gallery",
+          layout: "pages",
+          images: [
+            img("cartao-frente.jpg", "Frente do cartão de avaliação do delivery, com o mascote, a pergunta Gostou do seu pedido?, cinco estrelas e um QR code", 1064, 652),
+            img("cartao-verso.jpg", "Verso do cartão, em vermelho com a logo creme, o Instagram e o endereço da Grandizoli's", 1064, 652),
+          ],
+          caption: "O cartão do delivery, 9 × 5,5 cm: frente com o QR e verso com a marca.",
+        },
+        {
+          kind: "text",
+          paragraphs: [
+            "A terceira peça é um ímã de geladeira de 9 × 6 cm, só com a logo e o telefone grande, para a casa ficar à vista justamente na hora em que bate a fome. O número ocupa a largura toda do painel para dar para ler de longe.",
+          ],
+        },
+        {
+          kind: "image",
+          image: img("ima-geladeira.jpg", "Ímã de geladeira da Grandizoli's, com a logo colorida em cima e o telefone em letras grandes numa faixa verde, sobre painel creme com borda de xadrez", 1064, 708),
+          caption: "O ímã de geladeira, 9 × 6 cm: a logo e o telefone em destaque.",
+          size: "column",
+        },
+      ],
+    },
+    {
       id: "bastidores",
       title: "Bastidores técnicos",
       blocks: [
@@ -161,7 +207,7 @@ export const grandizolisPizzaria: CaseStudy = {
   note: {
     title: "Por que eu fiz",
     paragraphs: [
-      "A Grandizoli's é a pizzaria de um amigo meu, que estudou comigo. Fiz este projeto por conta própria, sem ele pedir, porque queria ver o negócio dele com uma vitrine à altura da comida que ele faz.",
+      "A Grandizoli's é a pizzaria de um amigo meu, que estudou comigo. Comecei este projeto por conta própria, sem ele pedir, porque queria ver o negócio dele com uma vitrine à altura da comida que ele faz. Quando mostrei as ideias, ele gostou, e agora estou fazendo tudo para ele de graça, por ser meu amigo.",
       "A casa já tinha uma marca simpática e um site de pedidos que funciona, mas nada que desse vontade antes de pedir. Desejo muito sucesso para ele e para a Grandizoli's, e que este trabalho ajude a encher a casa de gente com fome.",
     ],
   },
