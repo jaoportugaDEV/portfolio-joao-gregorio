@@ -150,41 +150,21 @@ export const grandizolisPizzaria: CaseStudy = {
           kind: "text",
           paragraphs: [
             "Depois do site, fui além da tela e desenhei três peças impressas, as ideias que o dono gostou e que estou fazendo para ele de graça. Todas usam o xadrez, as cores e o mascote da casa, e foram preparadas com sangria e xadrez em vetor para a gráfica imprimir sem borrar.",
-            "A primeira é a placa de mesa, de 10 × 15 cm, com uma tag NFC e um QR code. A pessoa encosta o celular, ou lê o código, e cai direto na avaliação da casa no Google. O texto convida a contar como foi, sem oferecer brinde nem desconto em troca de nota, porque o Google proíbe avaliação incentivada.",
           ],
         },
         {
           kind: "image",
-          image: img("placa-mesa.jpg", "Placa de mesa da Grandizoli's, em creme com borda de xadrez verde e moldura vermelha, com o mascote, a frase Gostou? Conta pra gente!, cinco estrelas e um QR code", 1100, 1650),
-          caption: "A placa de mesa, 10 × 15 cm, com NFC e QR code para avaliar no Google.",
-          size: "column",
+          image: img("pecas-impressas.jpg", "As três peças impressas da Grandizoli's: a placa de mesa com QR code, o cartão de avaliação do delivery, frente e verso, e o ímã de geladeira com a logo e o telefone", 1800, 1100),
+          caption: "A placa de mesa, o cartão do delivery (frente e verso) e o ímã de geladeira.",
+          size: "wide",
         },
         {
-          kind: "text",
-          paragraphs: [
-            "A segunda peça é um cartão pequeno de 9 × 5,5 cm para colocar dentro dos pedidos de delivery. A frente pergunta \"Gostou do seu pedido?\" e leva ao mesmo QR de avaliação. O verso fixa a marca: logo, Instagram e endereço.",
+          kind: "features",
+          items: [
+            { title: "Placa de mesa, 10 × 15 cm", text: "Tem uma tag NFC e um QR code: a pessoa encosta o celular ou lê o código e cai direto na avaliação da casa no Google. O texto convida a contar como foi, sem brinde nem desconto em troca de nota, porque o Google proíbe avaliação incentivada." },
+            { title: "Cartão do delivery, 9 × 5,5 cm", text: "Vai dentro do pedido. A frente pergunta \"Gostou do seu pedido?\" e leva ao mesmo QR de avaliação; o verso fixa a marca, com logo, Instagram e endereço." },
+            { title: "Ímã de geladeira, 9 × 6 cm", text: "Só a logo e o telefone grande, para a casa ficar à vista justamente na hora em que bate a fome." },
           ],
-        },
-        {
-          kind: "gallery",
-          layout: "pages",
-          images: [
-            img("cartao-frente.jpg", "Frente do cartão de avaliação do delivery, com o mascote, a pergunta Gostou do seu pedido?, cinco estrelas e um QR code", 1064, 652),
-            img("cartao-verso.jpg", "Verso do cartão, em vermelho com a logo creme, o Instagram e o endereço da Grandizoli's", 1064, 652),
-          ],
-          caption: "O cartão do delivery, 9 × 5,5 cm: frente com o QR e verso com a marca.",
-        },
-        {
-          kind: "text",
-          paragraphs: [
-            "A terceira peça é um ímã de geladeira de 9 × 6 cm, só com a logo e o telefone grande, para a casa ficar à vista justamente na hora em que bate a fome. O número ocupa a largura toda do painel para dar para ler de longe.",
-          ],
-        },
-        {
-          kind: "image",
-          image: img("ima-geladeira.jpg", "Ímã de geladeira da Grandizoli's, com a logo colorida em cima e o telefone em letras grandes numa faixa verde, sobre painel creme com borda de xadrez", 1064, 708),
-          caption: "O ímã de geladeira, 9 × 6 cm: a logo e o telefone em destaque.",
-          size: "column",
         },
       ],
     },
